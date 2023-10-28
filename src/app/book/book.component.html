@@ -1,0 +1,7 @@
+<p>book works!</p>
+<app-filter
+    (valueChange)='onValueChange($event)'
+    [bookId]='id'>
+</app-filter>
+Book: <input [(ngModel)]="id">
+From Filter: {{message}}
