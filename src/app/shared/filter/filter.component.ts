@@ -1,11 +1,11 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
-export class FilterComponent {
+export class FilterComponent implements OnChanges, OnInit {
   private _filterText: string;
   @Output() valueChange = 
         new EventEmitter<string>();
@@ -20,5 +20,12 @@ export class FilterComponent {
     this.valueChange.emit(value);
   } 
 
+  ngOnChanges(changes: SimpleChanges): void{
+    console.log(changes);
+  }
+
+  ngOnInit(){
+
+  }
 
 }
